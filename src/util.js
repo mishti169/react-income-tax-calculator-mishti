@@ -1,21 +1,19 @@
 export const getCalculatedTax = (income = 0) => {
-	let remainingValue = income - 250000;
 	let calculatedTax = 0;
 
-	if (remainingValue <= 250000 && remainingValue <= 500000) {
-		if (remainingValue <= 250000) {
-			calculatedTax = remainingValue * 0.5;
-		} else {
-			remainingValue -= 250000;
-			calculatedTax = 250000 * 0.5;
-		}
-	} else if (remainingValue <= 1000000) {
-		remainingValue -= 500000;
-		calculatedTax = remainingValue * 0.2;
-	} else {
-		remainingValue -= 500000;
-		calculatedTax = remainingValue * 0.3;
+	if (income > 2_50_000 && income <= 5_00_000) {
+		calculatedTax += (income - 250000) * 0.05;
+		return calculatedTax;
 	}
 
+	if (income > 500000 && income <= 1000000) {
+		calculatedTax = 12500;
+		calculatedTax += (income - 500000) * 0.2;
+		return calculatedTax;
+	}
+	if (income > 1000000) {
+		calculatedTax = 112500;
+		calculatedTax += (income - 1000000) * 0.3;
+	}
 	return calculatedTax;
 };
