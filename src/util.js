@@ -19,7 +19,7 @@ export const getCalculatedTax = (income = 0) => {
 };
 
 export const getCalculatedNewTax = (income = 0) => {
-	const incomeAfterDeduction = income - 50000;
+	const incomeAfterDeduction = income;
 	if (incomeAfterDeduction <= 250000) {
 		return 0;
 	} else if (incomeAfterDeduction > 250000 && incomeAfterDeduction <= 500000) {
