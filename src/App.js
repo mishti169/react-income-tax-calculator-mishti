@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './App.css';
-import { useEffect, useState } from 'react';
-import { getCalculatedNewTax, getCalculatedTax } from './util';
+import {
+	amountToInrFormat,
+	getCalculatedNewTax,
+	getCalculatedTax,
+} from './util';
 
 function App() {
 	const [oldTaxAmount, setOldTaxAmount] = useState(0);
@@ -52,6 +56,7 @@ function App() {
 		const newTax = getCalculatedNewTax(totalIncome);
 		setOldTaxAmount(oldTax);
 		setNewTaxAmount(newTax);
+		window.scrollTo(0, document.body.scrollHeight);
 	};
 
 	const onInputFocus = (event) => {
@@ -132,10 +137,10 @@ function App() {
 			</form>
 			<div className='tax-ans-wrapper'>
 				<p>
-					your income tax as per old regime is Rs. <span>{oldTaxAmount}</span>
+					Tax Old Regime : <b>{amountToInrFormat(oldTaxAmount)}</b>
 				</p>
 				<p>
-					your income tax as per new regime is Rs. <span>{newTaxAmount}</span>
+					Tax New Regime : <b>{amountToInrFormat(newTaxAmount)}</b>
 				</p>
 			</div>
 		</div>
