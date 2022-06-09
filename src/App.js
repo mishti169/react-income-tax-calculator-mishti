@@ -136,12 +136,18 @@ function App() {
 				</div>
 			</form>
 			<div className='tax-ans-wrapper'>
-				<p>
-					Tax Old Regime : <b>{amountToInrFormat(oldTaxAmount)}</b>
-				</p>
-				<p>
-					Tax New Regime : <b>{amountToInrFormat(newTaxAmount)}</b>
-				</p>
+				<span className='tax-ans-label'>Tax Old Regime :</span>
+				<b
+					className={`amount ${oldTaxAmount > newTaxAmount ? 'green' : 'red'}`}
+				>
+					{amountToInrFormat(oldTaxAmount)}
+				</b>
+				<span className='tax-ans-label'>Tax New Regime :</span>
+				<b
+					className={`amount ${newTaxAmount > oldTaxAmount ? 'green' : 'red'}`}
+				>
+					{amountToInrFormat(newTaxAmount)}
+				</b>
 			</div>
 		</div>
 	);
