@@ -1,11 +1,11 @@
 import './App.css';
 import { useState } from 'react';
-import { getCalculatedTax } from './util';
+import { getCalculatedNewTax, getCalculatedTax } from './util';
 
 function App() {
 	const [inputVal, setInputVal] = useState('');
-	const [taxAmount, setTaxAmount] = useState(0);
-	// let taxAmount;
+	const [oldTaxAmount, setOldTaxAmount] = useState(0);
+	const [newTaxAmount, setNewTaxAmount] = useState(0);
 
 	const onChangeInputVal = (event) => {
 		setInputVal(event.target.value);
@@ -13,24 +13,30 @@ function App() {
 		// console.log('change inputVal');
 	};
 
-	const onCalculateBtnClick = () => {
-		const ans = getCalculatedTax(+inputVal);
-		setTaxAmount(ans);
+	const onBtnClick = (event) => {
+		event.preventDefault();
+		const oldTax = getCalculatedTax(+inputVal);
+		const newTax = getCalculatedNewTax(+inputVal);
+		setOldTaxAmount(oldTax);
+		setNewTaxAmount(newTax);
 	};
 
 	return (
 		<div className='App'>
 			{/* <header className='App-header'></header> */}
-			<div>
+			<form>
 				<label>Total Income</label>
 				<input value={inputVal} onChange={onChangeInputVal} />
-			</div>
-			<button className='' onClick={onCalculateBtnClick}>
-				Calculate
-			</button>
-			<h4>
-				your income tax is Rs. <span>{taxAmount}</span>
-			</h4>
+				<button type='submit' className='' onClick={onBtnClick}>
+					Calculate
+				</button>
+			</form>
+			<p>
+				your income tax as per old regime is Rs. <span>{oldTaxAmount}</span>
+			</p>
+			<p>
+				your income tax as per new regime is Rs. <span>{newTaxAmount}</span>
+			</p>
 		</div>
 	);
 }
