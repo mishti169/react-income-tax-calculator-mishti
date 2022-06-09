@@ -17,8 +17,6 @@ function App() {
 		health: 0,
 	});
 
-	useEffect(() => console.log(userInput));
-
 	const onChangeInputVal = (event) => {
 		setUserInput((previousValue) => ({
 			...previousValue,
@@ -56,10 +54,13 @@ function App() {
 		setNewTaxAmount(newTax);
 	};
 
+	const onInputFocus = (event) => {
+		event.target.select();
+	};
+
 	return (
 		<div className='App'>
-			{/* <header className='App-header'></header> */}
-			<form>
+			<form onFocus={onInputFocus} onSubmit={onBtnClick}>
 				<div className='form'>
 					<label>Total Income</label>
 					<input
@@ -126,9 +127,7 @@ function App() {
 					/>
 				</div>
 				<div className='submit-wrapper'>
-					<button type='submit' className='btn-submit' onClick={onBtnClick}>
-						Calculate
-					</button>
+					<input type='submit' className='btn-submit' value='Calculate' />
 				</div>
 			</form>
 			<div className='tax-ans-wrapper'>

@@ -14,10 +14,16 @@
 }
 .btn-submit {
 	padding: 1rem 5rem;
-	border: none;
+	border: 1px solid;
+	font-size: 1.5rem;
 	border-radius: 8px;
+	cursor: pointer;
 }
-
+.btn-submit:hover {
+	/* background: #ccc; */
+	border: 2px solid #555;
+	color: #555;
+}
 .m-10 {
 	margin: 1rem;
 }
@@ -30,6 +36,12 @@
 input {
 	padding: 0.5rem;
 	border-radius: 8px;
+	border: 2px solid #ccc;
+	outline: none;
+	transition: 0.3s;
+}
+input:focus {
+	border: 2px solid #555;
 }
 
 .tax-ans-wrapper {
