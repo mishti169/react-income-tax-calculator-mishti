@@ -42,3 +42,10 @@ export const getCalculatedNewTax = (income = 0) => {
 		return (incomeAfterDeduction - 1500000) * 0.3 + 187500;
 	}
 };
+
+export const amountToInrFormat = (amount = 0) => {
+	return amount.toLocaleString('en-IN', {
+		style: 'currency',
+		currency: 'INR',
+	});
+};
