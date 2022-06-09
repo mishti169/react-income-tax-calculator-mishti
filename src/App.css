@@ -1,9 +1,18 @@
 .App {
 	width: 400px;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
+	border: 2px solid red;
+	padding: 1.2rem;
 }
 
-.App-header {
+form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/* border: 3px solid gold; */
+	gap: 1rem;
+	/* padding: 1rem; */
+}
+.tax-ans-wrapper {
+	border: 2px solid black;
+}
+@media screen {
 }
