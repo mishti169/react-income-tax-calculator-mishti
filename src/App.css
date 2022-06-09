@@ -4,7 +4,6 @@
 
 .App {
 	width: 400px;
-	border: 2px solid red;
 	width: 100%;
 	padding: 1.2rem;
 }
@@ -16,7 +15,6 @@
 .btn-submit {
 	padding: 1rem 5rem;
 	border: none;
-	background: orange;
 	border-radius: 8px;
 }
 
@@ -27,7 +25,6 @@
 .form {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	border: 3px solid gold;
 	gap: 0.5rem;
 }
 input {
@@ -38,7 +35,6 @@ input {
 
 .tax-ans-wrapper {
 	padding: 1rem;
-	border: 2px solid black;
 }
 
 @media screen and (max-width: 650px) {
