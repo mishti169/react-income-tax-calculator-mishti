@@ -1,9 +1,58 @@
-.App {
-	width: 400px;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
+* {
+	box-sizing: border-box;
 }
 
-.App-header {
+.App {
+	width: 400px;
+	border: 2px solid red;
+	width: 100%;
+	padding: 1.2rem;
+}
+.submit-wrapper {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0;
+}
+.btn-submit {
+	padding: 1rem 5rem;
+	border: none;
+	background: orange;
+	border-radius: 8px;
+}
+
+.m-10 {
+	margin: 1rem;
+}
+
+.form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border: 3px solid gold;
+	gap: 0.5rem;
+}
+input {
+	padding: 0.5rem;
+	border-radius: 8px;
+	/* font-size: x-large; */
+}
+
+.tax-ans-wrapper {
+	padding: 1rem;
+	border: 2px solid black;
+}
+
+@media screen and (max-width: 650px) {
+	.form {
+		grid-template-columns: 1fr;
+	}
+
+	.btn-submit {
+		padding: 1rem 3rem;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.form {
+		/* width: 100%; */
+	}
 }
