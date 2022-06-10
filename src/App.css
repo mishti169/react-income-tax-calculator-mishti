@@ -65,7 +65,7 @@ input:focus {
 
 .tax-ans-wrapper {
 	display: grid;
-	grid-template-columns: 25% min-content;
+	grid-template-columns: max-content min-content;
 	gap: 1rem;
 	align-items: center;
 }
@@ -100,10 +100,6 @@ input:focus {
 	}
 
 	.tax-ans-wrapper {
-		grid-template-columns: 1fr;
-	}
-
-	.tax-ans-label {
-		justify-self: flex-start;
+		justify-content: center;
 	}
 }
