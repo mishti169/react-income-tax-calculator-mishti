@@ -46,6 +46,11 @@ label {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 0.5rem;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 input[type='number']:nth-of-type(1n) {
 	margin-bottom: 1rem;
@@ -68,6 +73,12 @@ input:focus {
 	grid-template-columns: max-content min-content;
 	gap: 1rem;
 	align-items: center;
+	box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+	margin: 0 auto;
+	padding: 2rem;
+	border-radius: 8px;
+	width: 700px;
+	justify-content: center;
 }
 
 .tax-ans-label {
